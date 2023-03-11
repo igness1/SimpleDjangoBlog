@@ -10,17 +10,16 @@
                         <p>Published on:  <b>{{ post.published_date }}</b>  by <b>{{ post.author }}</b></p>
                     </div>
                 <p class="card-text">{{ post.text }}</p>
-                <!-- <h6>Likes: {{ post.total_likes }}</h6>
-                <h6>Likes by: {{ post.who_liked }}</h6> -->
+                <h6>Likes: {{ post.number_of_likes }}</h6>
+                <h6>Liked by: {{ post.who_liked }}</h6>
                     <div class="row">
                     <div class="col-sm" >
-                        <!--
-                        like button - need functionality first
-                        <form method="post" action="">
+s
+                        <form method="post" action="{% url 'give_like' pk=post.pk %}">
                             {% csrf_token %}
                             <button type="submit" name="post_id" class="btn btn-primary" value="{{ post.id }}">Like</button>
                         </form>
-                        -->
+
                     </div>
                     <div class="col-sm" >
                         <a href="{% url 'post_detail' pk=post.pk %}" class="btn btn-dark">Comments: {{ post.approve_comments.count }}</a>

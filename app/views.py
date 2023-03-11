@@ -56,12 +56,14 @@ def approve_comment(request, pk):
     comment.approve()
     return redirect('post_detail', pk=comment.post.pk)
 
-# TODO:Working likes option
-# @login_required
-# def give_like(request, pk):
-#    post = get_object_or_404(Post, id=request.POST.get('post_id'))
-#    post.likes.add(request.user)
-#    return redirect('post_list')
+@login_required
+def give_like(request, pk):
+   post = get_object_or_404(Post, id=request.POST.get('post_id'))
+   if post.likes.filter(id=request.user.id).exists():
+       post.likes.remove(request.user)
+   else:
+       post.likes.add(request.user)
+   return redirect('post_list')
 
 
 def add_comment(request, pk):
