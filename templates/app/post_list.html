@@ -14,7 +14,7 @@
                 <h6>Liked by: {{ post.who_liked }}</h6>
                     <div class="row">
                     <div class="col-sm" >
-s
+
                         <form method="post" action="{% url 'give_like' pk=post.pk %}">
                             {% csrf_token %}
                             <button type="submit" name="post_id" class="btn btn-primary" value="{{ post.id }}">Like</button>
