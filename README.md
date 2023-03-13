@@ -17,7 +17,7 @@ Reference: [https://docs.python-guide.org/starting/installation/](https://docs.p
 #### 2. Setup virtual environment
 ```bash
 # Install virtual environment
-sudo pip install virtualenv
+pip install virtualenv
 
 # Make a directory
 mkdir envs
@@ -26,7 +26,7 @@ mkdir envs
 virtualenv ./envs/
 
 # Activate virtual environment
-source envs/bin/activate
+envs\Scripts\activate
 ```
 
 #### 3. Clone git repository
