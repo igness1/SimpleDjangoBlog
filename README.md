@@ -23,10 +23,10 @@ pip install virtualenv
 mkdir envs
 
 # Create virtual environment
-virtualenv ./envs/
+virtualenv myenv
 
 # Activate virtual environment
-envs\Scripts\activate
+myenv\Scripts\activate
 ```
 
 #### 3. Clone git repository
